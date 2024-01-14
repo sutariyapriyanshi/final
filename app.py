@@ -4,6 +4,7 @@ import streamlit as st
 import pickle as pk
 import base64
 from PIL import Image
+import sklearn
 
 im = Image.open('lung.png')
 st.set_page_config(page_title="Heart Disease Predictor", page_icon = im)
@@ -66,10 +67,14 @@ if choice=="Cardiovascular Disease Predictor":
 
     if st.button('Predict'):
         input = np.array([gender,age,cholesterol,gluc,smoke,smoke,alco,active,height,weight,syst_bp,diast_bp]).reshape(1, -1)
- 
         bmi = int(weight/((height / 100 ) ** 2))
-        inp = np.array([[bmi,age,syst_bp,diast_bp]]).reshape(1,4)
-        
+        inp = np.array([bmi,age,syst_bp,diast_bp]).reshape(1,4)
+        st.markdown(height)
+        st.markdown(weight)
+        st.markdown(bmi)
+        st.markdown(age)
+        st.markdown(syst_bp)
+        st.markdown(diast_bp)
         st.markdown(inp)
 
         output = model.predict(inp)
@@ -78,13 +83,7 @@ if choice=="Cardiovascular Disease Predictor":
         else:
             stn = 'Patient may have Heart Disease'
         st.markdown(stn)
-        st.markdown(height)
-        st.markdown(weight)
-        st.markdown(bmi)
-        st.markdown(age)
-        st.markdown(syst_bp)
-        st.markdown(diast_bp)
-
+        
     copyright_html = """
     <div style="text-align: center; padding: 10px;">
     <p style="margin: 0;">&copy; 2024 Your Company. All rights reserved.</p>
