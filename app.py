@@ -82,7 +82,7 @@ if choice=="Cardiovascular Disease Predictor":
              stn = 'Patient is Healthy,No heart Disease'
         else:
              stn = 'Patient may have Heart Disease'
-         st.markdown(stn)
+        st.markdown(stn)
         
 
     copyright_html = """
