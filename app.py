@@ -69,8 +69,8 @@ if choice=="Cardiovascular Disease Predictor":
  
         bmi = int(weight/((height / 100 ) ** 2))
         inp = np.array([[bmi,age,syst_bp,diast_bp]]).reshape(1,4)
-        print("Shape of X:", X.shape)
-        print(inp)
+        st.write("Shape of X:", X.shape)
+        st.write(inp)
 
         output = model.predict(inp)
         if output[0] == 0:
