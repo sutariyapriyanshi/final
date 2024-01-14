@@ -78,11 +78,11 @@ if choice=="Cardiovascular Disease Predictor":
         st.markdown(diast_bp)
         
         output = model.predict(inp)
-        if output[0] == 0:
-             stn = 'Patient is Healthy,No heart Disease'
-        else:
-             stn = 'Patient may have Heart Disease'
-        st.markdown(stn)
+        # if output[0] == 0:
+        #      stn = 'Patient is Healthy,No heart Disease'
+        # else:
+        #      stn = 'Patient may have Heart Disease'
+        # st.markdown(stn)
         
 
     copyright_html = """
