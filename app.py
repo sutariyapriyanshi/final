@@ -34,7 +34,7 @@ choice = st.sidebar.radio("Select any",("Cardiovascular Disease Predictor","Dise
 if choice=="Cardiovascular Disease Predictor":
 
     model = pk.load(open('Cardiovascular_disease.pkl', 'rb'))    
-    data = pd.read_excel('health_data.xlsx')
+    data = pd.read_excel('https://raw.githubusercontent.com/sutariyapriyanshi/final/main/health_data.xlsx')
 
     st.header('Heart Disease Predictor')
 
