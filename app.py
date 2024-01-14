@@ -69,10 +69,21 @@ if choice=="Cardiovascular Disease Predictor":
  
         bmi = int(weight/((height / 100 ) ** 2))
         # inp = np.array([bmi,age,syst_bp,diast_bp]).reshape(1,-1)
-        feature_importances = model.feature_importances_
+        # feature_importances = model.feature_importances_
+        # inp = np.array([bmi, age, syst_bp, diast_bp]).reshape(1, -1)
+        # selected_features = [inp[0][0], inp[0][1], inp[0][2], inp[0][3]]
+        # output = model.predict([selected_features])
+        feature_order = ['bmi', 'age', 'syst_bp', 'diast_bp']
+
+        # Assuming inp is your input data
         inp = np.array([bmi, age, syst_bp, diast_bp]).reshape(1, -1)
-        selected_features = [inp[0][0], inp[0][1], inp[0][2], inp[0][3]]
+        
+        # Ensure inp has the same order of features as during training
+        selected_features = [inp[0][feature_order.index(feature)] for feature in feature_order]
+        
+        # Make the prediction using selected features
         output = model.predict([selected_features])
+
 
         # Check the number of features in inp
         st.markdown(height)
