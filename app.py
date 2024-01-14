@@ -68,7 +68,7 @@ if choice=="Cardiovascular Disease Predictor":
         input = np.array([gender,age,cholesterol,gluc,smoke,smoke,alco,active,height,weight,syst_bp,diast_bp]).reshape(1, -1)
  
         bmi = int(weight/((height / 100 ) ** 2))
-        inp = np.array([bmi,age,syst_bp,diast_bp]).reshape(1,-1)
+        inp = np.array([[bmi,age,syst_bp,diast_bp]]).reshape(1,-1)
         output = model.predict(inp)
         if output[0] == 0:
             stn = 'Patient is Healthy,No heart Disease'
