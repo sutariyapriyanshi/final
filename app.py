@@ -71,12 +71,7 @@ if choice=="Cardiovascular Disease Predictor":
         inp = np.array([bmi,age,syst_bp,diast_bp]).reshape(1,-1)
         
         # only printing the values
-        st.markdown(height)
-        st.markdown(weight)
-        st.markdown(bmi)
-        st.markdown(age)
-        st.markdown(syst_bp)
-        st.markdown(diast_bp)
+        
         
         output = model.predict(inp)
     
@@ -84,8 +79,14 @@ if choice=="Cardiovascular Disease Predictor":
              stn = 'Patient is Healthy,No heart Disease'
         else:
              stn = 'Patient may have Heart Disease'
-        st.markdown(stn)
         
+        st.markdown(stn)
+        st.markdown(height)
+        st.markdown(weight)
+        st.markdown(bmi)
+        st.markdown(age)
+        st.markdown(syst_bp)
+        st.markdown(diast_bp)
 
     copyright_html = """
     <div style="text-align: center; padding: 10px;">
