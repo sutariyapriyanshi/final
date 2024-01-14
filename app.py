@@ -68,7 +68,12 @@ if choice=="Cardiovascular Disease Predictor":
         input = np.array([gender,age,cholesterol,gluc,smoke,smoke,alco,active,height,weight,syst_bp,diast_bp]).reshape(1, -1)
  
         bmi = int(weight/((height / 100 ) ** 2))
-        inp = np.array([bmi,age,syst_bp,diast_bp]).reshape(1,-1)
+        # inp = np.array([bmi,age,syst_bp,diast_bp]).reshape(1,-1)
+        feature_importances = model.feature_importances_
+        inp = np.array([bmi, age, syst_bp, diast_bp]).reshape(1, -1)
+        selected_features = [inp[0][0], inp[0][1], inp[0][2], inp[0][3]]
+        output = model.predict([selected_features])
+
         # Check the number of features in inp
         st.markdown(height)
         st.markdown(weight)
@@ -77,12 +82,13 @@ if choice=="Cardiovascular Disease Predictor":
         st.markdown(syst_bp)
         st.markdown(diast_bp)
         
-        output = model.predict(inp)
-        # if output[0] == 0:
-        #      stn = 'Patient is Healthy,No heart Disease'
-        # else:
-        #      stn = 'Patient may have Heart Disease'
-        # st.markdown(stn)
+        # output = model.predict(inp)
+    
+        if output[0] == 0:
+             stn = 'Patient is Healthy,No heart Disease'
+        else:
+             stn = 'Patient may have Heart Disease'
+        st.markdown(stn)
         
 
     copyright_html = """
