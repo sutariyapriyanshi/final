@@ -71,7 +71,7 @@ if choice=="Cardiovascular Disease Predictor":
         inp = np.array([bmi,age,syst_bp,diast_bp]).reshape(1,-1)
         # Check the number of features in inp
         print(inp.shape[1])
-        print("Number of features expected by the model:", model.n_features_)
+    
         # output = model.predict(inp)
         # if output[0] == 0:
         #     stn = 'Patient is Healthy,No heart Disease'
