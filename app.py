@@ -76,7 +76,8 @@ if choice=="Cardiovascular Disease Predictor":
         # st.markdown(syst_bp)
         # st.markdown(diast_bp)
         # st.markdown(inp)
-        st.markdown(X.shape) 
+        # st.markdown(.shape)        
+        st.markdown(model.shape) 
         output = model.predict(inp)
         if output[0] == 0:
             stn = 'Patient is Healthy,No heart Disease'
