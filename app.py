@@ -69,14 +69,14 @@ if choice=="Cardiovascular Disease Predictor":
         input = np.array([gender,age,cholesterol,gluc,smoke,smoke,alco,active,height,weight,syst_bp,diast_bp]).reshape(1, -1)
         bmi = int(weight/((height / 100 ) ** 2))
         inp = np.array([bmi,age,syst_bp,diast_bp]).reshape(1,4)
-        st.markdown(height)
-        st.markdown(weight)
-        st.markdown(bmi)
-        st.markdown(age)
-        st.markdown(syst_bp)
-        st.markdown(diast_bp)
-        st.markdown(inp)
-
+        # st.markdown(height)
+        # st.markdown(weight)
+        # st.markdown(bmi)
+        # st.markdown(age)
+        # st.markdown(syst_bp)
+        # st.markdown(diast_bp)
+        # st.markdown(inp)
+        st.markdown(X.shape) 
         output = model.predict(inp)
         if output[0] == 0:
             stn = 'Patient is Healthy,No heart Disease'
